@@ -4,9 +4,10 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
-import { HyraNavbarComponent } from './hyra-navbar/hyra-navbar.component';
-import { HyraHomeModule } from './hyra-home/hyra-home.module';
 import { AppRoutingModule } from './app-routing.module';
+
+import { HyraHomeModule } from './hyra-home/hyra-home.module';
+import { HyraNavbarComponent } from './hyra-navbar/hyra-navbar.component';
 
 @NgModule({
   declarations: [

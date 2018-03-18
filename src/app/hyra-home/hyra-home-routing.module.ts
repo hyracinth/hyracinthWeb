@@ -5,9 +5,9 @@ import { HyraHomeComponent } from './hyra-home.component';
 
 const homeRoutes: Routes = [
   {
-    path: "Home",
+    path: 'Home',
     data: {
-      title: "Home"
+      title: 'Home'
     },
     component: HyraHomeComponent
   }

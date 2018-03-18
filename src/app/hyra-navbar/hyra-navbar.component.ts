@@ -12,7 +12,7 @@ export class HyraNavbarComponent implements OnInit {
   constructor() {
     this.isCollapsed = true;
   }
-  
+
   ngOnInit() {
   }
 
