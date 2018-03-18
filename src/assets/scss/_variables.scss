@@ -2,4 +2,13 @@
 @import "colors";
 @import "fonts";
 
-$primary: rgb(19, 179, 131);
+$primary: rgba(22, 30, 41, 0.87);
+$dark: rgb(196, 113, 19);
+
+$navbar-dark-color:                 rgba($dark, .5);
+$navbar-dark-hover-color:           rgba($dark, .75);
+$navbar-dark-active-color:          $dark;
+$navbar-dark-disabled-color:        rgba($dark, .25);
+$navbar-dark-toggler-border-color:  rgba($dark, .1);
+
+$navbar-padding-y: 0;
