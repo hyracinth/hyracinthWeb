@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudioGhibliService, StudioGhibliResponse } from '../../services/studio-ghibli.service';
 
 @Component({
   selector: 'app-studio-ghibli',
@@ -7,7 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudioGhibliComponent implements OnInit {
 
-  constructor() { }
+  filmList: StudioGhibliResponse[] = [];
+
+  constructor(private _studioGhibliService: StudioGhibliService) { }
+
+  getFilms()
+  {
+    this._studioGhibliService.getMovies().subscribe(data => {
+      this.filmList = data;
+    })
+  }
 
   ngOnInit() {
   }

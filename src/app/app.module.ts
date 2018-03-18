@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -10,8 +11,6 @@ import { HyraNavbarModule } from './hyra-navbar/hyra-navbar.module';
 import { HyraHomeModule } from './hyra-home/hyra-home.module';
 import { HyraProjectsModule } from './hyra-projects/hyra-projects.module';
 
-
-
 @NgModule({
   declarations: [
     AppComponent
@@ -19,6 +18,7 @@ import { HyraProjectsModule } from './hyra-projects/hyra-projects.module';
   imports: [
     BrowserModule,
     NgbModule.forRoot(),
+    HttpClientModule,
 
     AppRoutingModule,
     HyraNavbarModule,

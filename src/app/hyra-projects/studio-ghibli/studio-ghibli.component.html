@@ -1,3 +1,8 @@
-<p class="lead">
-    Placeholder for Studio Ghibli project
-  </p>
+
+<button (click)="getFilms()">Get Films</button>
+
+<div *ngIf="filmList.length > 0">
+    <div *ngFor="let currFilm of filmList">
+        <div>{{ currFilm.title }}</div>
+    </div>
+</div>
