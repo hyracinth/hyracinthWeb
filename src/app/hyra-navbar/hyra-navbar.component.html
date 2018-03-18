@@ -7,7 +7,7 @@
   
     <div class="navbar-collapse" [ngbCollapse]="isCollapsed">
       <ul class="nav navbar-nav" *ngFor="let currMenuItem of router.config">
-        <li class="nav-item">
+        <li class="nav-item" *ngIf="currMenuItem.data != null">
             <a class="nav-link" routerLink="{{ currMenuItem.path }}" routerLinkActive="active"> {{ currMenuItem.data.displayName }}</a>
         </li>
       </ul>
