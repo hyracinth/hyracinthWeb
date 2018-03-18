@@ -1,3 +1,6 @@
 //import variables.scss and contains all the css
 @import "variables";
 @import "mixins";
+
+//Bootstrap content needs to be imported AFTER
+@import "~bootstrap/scss/bootstrap";
