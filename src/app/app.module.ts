@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { HyraHomeModule } from './hyra-home/hyra-home.module';
+import { HyraProjectsModule } from './hyra-projects/hyra-projects.module';
+
 import { HyraNavbarComponent } from './hyra-navbar/hyra-navbar.component';
 
 @NgModule({
@@ -19,7 +21,8 @@ import { HyraNavbarComponent } from './hyra-navbar/hyra-navbar.component';
     NgbModule.forRoot(),
 
     AppRoutingModule,
-    HyraHomeModule
+    HyraHomeModule,
+    HyraProjectsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
