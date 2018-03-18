@@ -6,12 +6,12 @@ import { HyraHomeComponent } from './hyra-home.component';
 import { HyraHomeRoutingModule } from './hyra-home-routing.module';
 
 @NgModule({
+  declarations: [
+    HyraHomeComponent
+  ],
   imports: [
     CommonModule,
     HyraHomeRoutingModule
-  ],
-  declarations: [
-    HyraHomeComponent
   ]
 })
 export class HyraHomeModule { }

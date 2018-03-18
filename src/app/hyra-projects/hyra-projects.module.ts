@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { HyraProjectsComponent } from './hyra-projects.component';
 
 import { HyraProjectsRoutingModule } from './hyra-projects-routing.module';
+import { StudioGhibliModule } from './studio-ghibli/studio-ghibli.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    HyraProjectsRoutingModule
+    HyraProjectsRoutingModule,
+    StudioGhibliModule
   ],
   declarations: [
     HyraProjectsComponent
