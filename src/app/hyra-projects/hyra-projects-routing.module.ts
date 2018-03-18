@@ -7,7 +7,7 @@ const projectRoutes: Routes = [
   {
     path: 'Projects',
     data: {
-      title: 'Projects'
+      displayName: 'Projects'
     },
     component: HyraProjectsComponent
   }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-hyra-navbar',
@@ -9,7 +10,7 @@ export class HyraNavbarComponent implements OnInit {
 
   isCollapsed: boolean;
 
-  constructor() {
+  constructor(private router: Router) {
     this.isCollapsed = true;
   }
 

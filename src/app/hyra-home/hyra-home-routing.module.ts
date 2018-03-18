@@ -7,7 +7,7 @@ const homeRoutes: Routes = [
   {
     path: 'Home',
     data: {
-      title: 'Home'
+      displayName: 'Home'
     },
     component: HyraHomeComponent
   }
