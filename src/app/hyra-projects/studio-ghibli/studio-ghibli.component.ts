@@ -4,7 +4,7 @@ import { StudioGhibliService, StudioGhibliResponse } from '../../services/studio
 @Component({
   selector: 'app-studio-ghibli',
   templateUrl: './studio-ghibli.component.html',
-  styleUrls: ['./studio-ghibli.component.css']
+  styleUrls: ['./studio-ghibli.component.scss']
 })
 export class StudioGhibliComponent implements OnInit {
 

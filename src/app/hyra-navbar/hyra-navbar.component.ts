@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-hyra-navbar',
   templateUrl: './hyra-navbar.component.html',
-  styleUrls: ['./hyra-navbar.component.css']
+  styleUrls: ['./hyra-navbar.component.scss']
 })
 export class HyraNavbarComponent implements OnInit {
 
