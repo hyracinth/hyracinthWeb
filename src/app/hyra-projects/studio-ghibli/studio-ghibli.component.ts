@@ -9,6 +9,7 @@ import { StudioGhibliService, StudioGhibliResponse } from '../../services/studio
 export class StudioGhibliComponent implements OnInit {
 
   filmList: StudioGhibliResponse[] = [];
+  selectedFilm: StudioGhibliResponse;
 
   constructor(private _studioGhibliService: StudioGhibliService) { }
 
@@ -16,6 +17,10 @@ export class StudioGhibliComponent implements OnInit {
     this._studioGhibliService.getMovies().subscribe(data => {
       this.filmList = data;
     });
+  }
+
+  selectFilm(currFilm: StudioGhibliResponse) {
+    this.selectedFilm = currFilm;
   }
 
   ngOnInit() {

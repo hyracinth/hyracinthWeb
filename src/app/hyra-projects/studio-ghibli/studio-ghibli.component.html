@@ -1,8 +1,42 @@
+<div class="container-fluid mx-2">
+    <div class="row my-2">
+        <button type="button" class="btn btn-secondary btn-sm" (click)="getFilms()">Get Films</button>
+    </div>
 
-<button (click)="getFilms()">Get Films</button>
+    <div class="row">
+        <div class="col-8">
+            <table class="table table-hover table-sm">
+                <tr>
+                    <th hidden>ID</th>
+                    <th>Title</th>
+                    <th hidden>Description</th>
+                    <th>Director</th>
+                    <th hidden>Producer</th>
+                    <th>Release Date</th>
+                    <th>RT Rating</th>
+                </tr>
 
-<div *ngIf="filmList.length > 0">
-    <div *ngFor="let currFilm of filmList">
-        <div>{{ currFilm.title }}</div>
+                <tr *ngFor="let currFilm of filmList" (click)="selectFilm(currFilm)">
+                    <td hidden>{{ currFilm.id }}</td>
+                    <td>{{ currFilm.title }}</td>
+                    <td hidden>{{ currFilm.description }}</td>
+                    <td>{{ currFilm.director }}</td>
+                    <td hidden>{{ currFilm.producer }}</td>
+                    <td>{{ currFilm.release_date }}</td>
+                    <td>{{ currFilm.rt_score }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="col">
+            <div class="card" *ngIf="selectedFilm != null">
+                <div class="card-body">
+                    <h5 class="card-title">{{ selectedFilm.title }}</h5>
+                    <p class="card-text">
+                        {{ selectedFilm.description }}
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
