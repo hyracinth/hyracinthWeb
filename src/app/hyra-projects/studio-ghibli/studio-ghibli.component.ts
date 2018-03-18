@@ -12,11 +12,10 @@ export class StudioGhibliComponent implements OnInit {
 
   constructor(private _studioGhibliService: StudioGhibliService) { }
 
-  getFilms()
-  {
+  getFilms() {
     this._studioGhibliService.getMovies().subscribe(data => {
       this.filmList = data;
-    })
+    });
   }
 
   ngOnInit() {

@@ -6,5 +6,5 @@
 export const environment = {
   production: false,
 
-  StudioGhibliUrl: "https://ghibliapi.herokuapp.com/"
+  StudioGhibliUrl: 'https://ghibliapi.herokuapp.com/'
 };
