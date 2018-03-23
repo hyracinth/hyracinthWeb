@@ -27,7 +27,7 @@ export class StudioGhibliComponent implements OnInit {
   }
 
   toggleDisplayDesc(currFilm: StudioGhibliResponse) {
-    if (currFilm.displayDesc === null || currFilm.displayDesc === false) {
+    if (!currFilm.displayDesc) {
       currFilm.displayDesc = true;
     } else {
       currFilm.displayDesc = false;
