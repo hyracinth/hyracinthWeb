@@ -10,7 +10,7 @@ export class HyraNavbarComponent implements OnInit {
 
   isCollapsed: boolean;
 
-  constructor(private router: Router) {
+  constructor(public router: Router) {
     this.isCollapsed = true;
   }
 
