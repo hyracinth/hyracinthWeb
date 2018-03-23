@@ -24,6 +24,7 @@ export class StudioGhibliResponse {
   locations: string[];
   vehicles: string[];
   url: string;
+  displayDesc: boolean;
 }
 
 @Injectable()

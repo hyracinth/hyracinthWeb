@@ -26,4 +26,12 @@ export class StudioGhibliComponent implements OnInit {
   ngOnInit() {
   }
 
+  toggleDisplayDesc(currFilm: StudioGhibliResponse) {
+    if (currFilm.displayDesc === null || currFilm.displayDesc === false) {
+      currFilm.displayDesc = true;
+    } else {
+      currFilm.displayDesc = false;
+    }
+  }
+
 }
