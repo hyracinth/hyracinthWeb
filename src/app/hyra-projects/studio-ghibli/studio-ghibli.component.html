@@ -4,23 +4,20 @@
     </div>
 
     <div *ngIf="filmList.length > 0">
-        <div class="row">
-            <div class="col-md-1">#</div>
-            <div class="col-md-4">Title</div>
-            <div class="col-md-3">Director</div>
-            <div class="col-md-2 text-right">Release Year</div>
-        </div>
-
+        <span class="d-none d-md-block">
+            <div class="row">
+                <div class="col-md-5">Title</div>
+                <div class="col-md-3">Director</div>
+                <div class="col-md-2">Release Year</div>
+            </div>
+        </span>
         <div class="my-2" *ngFor="let currFilm of filmList">
             <div class="row">
-                <div class="col-md-1">
-                    <button class="btn btn-sm" (click)="toggleDisplayDesc(currFilm)">\/</button>
-                </div>
-                <div class="col-md-4">{{ currFilm.title }}</div>
+                <div class="col-md-5">
+                    <button class="btn btn-sm" (click)="toggleDisplayDesc(currFilm)">\/</button> {{ currFilm.title }}</div>
                 <div class="col-md-3">{{ currFilm.director }}</div>
-                <div class="col-md-2 text-right">{{ currFilm.release_date }}</div>
-            </div>
-            <div class="row">
+                <div class="col-md-2">{{ currFilm.release_date }}</div>
+                <div class="w-100"></div>
                 <div class="col-md-10" [hidden]="!currFilm.displayDesc">{{ currFilm.description }}</div>
             </div>
         </div>
