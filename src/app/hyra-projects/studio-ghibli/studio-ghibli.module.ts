@@ -17,6 +17,9 @@ import { StudioGhibliService } from '../../services/studio-ghibli.service';
   ],
   providers: [
     StudioGhibliService
+  ],
+  entryComponents: [
+    StudioGhibliComponent
   ]
 })
 export class StudioGhibliModule { }

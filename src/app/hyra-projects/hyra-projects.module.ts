@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { HyraProjectsComponent } from './hyra-projects.component';
 
@@ -10,10 +11,11 @@ import { StudioGhibliModule } from './studio-ghibli/studio-ghibli.module';
   imports: [
     CommonModule,
     HyraProjectsRoutingModule,
-    StudioGhibliModule
+    StudioGhibliModule,
+    RouterModule
   ],
   declarations: [
-    HyraProjectsComponent
+    HyraProjectsComponent,
   ]
 })
 export class HyraProjectsModule { }

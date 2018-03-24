@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { HyraProjectsComponent } from './hyra-projects.component';
+import { StudioGhibliComponent } from './studio-ghibli/studio-ghibli.component';
 
 const projectRoutes: Routes = [
   {
@@ -9,7 +10,15 @@ const projectRoutes: Routes = [
     data: {
       displayName: 'Projects'
     },
-    component: HyraProjectsComponent
+    component: HyraProjectsComponent,
+    children: [{
+      path: 'StudioGhibli',
+      data: {
+        displayName: 'StudioGhibli'
+      },
+      component: StudioGhibliComponent,
+    },
+    ]
   }
 ];
 
@@ -17,6 +26,6 @@ const projectRoutes: Routes = [
   imports: [
     RouterModule.forChild(projectRoutes)
   ],
-  declarations: []
+  declarations: [],
 })
 export class HyraProjectsRoutingModule { }
