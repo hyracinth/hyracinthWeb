@@ -1,7 +1,5 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-  <a class="navbar-brand" routerLink="Home" routerLinkActive="active">Hangry
-    <b>Hippo</b>
-  </a>
+  <a class="navbar-brand" routerLink="Home" routerLinkActive="active">Hangry<b>Hippo</b></a>
 
   <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isCollapsed=!isCollapsed">
     &#126;
@@ -13,7 +11,7 @@
         <a class="nav-link" routerLink="{{ currMenuItem.path }}" routerLinkActive="active"> {{ currMenuItem.data.displayName }}</a>
       </li>
       <li ngbDropdown class="nav-item dropdown" *ngIf="currMenuItem.data != null && currMenuItem.children">
-        <a ngbDropdownToggle class="nav-link">Projects</a>
+        <a ngbDropdownToggle class="nav-link" routerLink="{{ currMenuItem.path }}" routerLinkActive="active">Projects</a>
         <div ngbDropdownMenu class="dropdown-menu" *ngFor="let childMenu of currMenuItem.children">
             <a class="dropdown-item" routerLink="{{ currMenuItem.path + '/' + childMenu.path }}" routerLinkActive="active"> {{ childMenu.data.displayName }}</a>
         </div>
