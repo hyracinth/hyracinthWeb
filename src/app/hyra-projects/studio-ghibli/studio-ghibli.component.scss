@@ -1,5 +1,7 @@
-div.contentRow:hover {
-    background-color: rgba(119, 136, 153, 0.274);
+@media screen and (min-width:800px){
+    div.contentRow:hover {
+        background-color: rgba(119, 136, 153, 0.274);
+    }
 }
 
 div.headerRow {
