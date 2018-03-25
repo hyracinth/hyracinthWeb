@@ -14,7 +14,7 @@ const projectRoutes: Routes = [
     children: [{
       path: 'StudioGhibli',
       data: {
-        displayName: 'StudioGhibli'
+        displayName: 'Studio Ghibli'
       },
       component: StudioGhibliComponent,
     },

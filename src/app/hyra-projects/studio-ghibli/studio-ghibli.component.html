@@ -1,18 +1,16 @@
 <div class="container-fluid mx-2">
-    <div class="row my-2">
-        <button type="button" class="btn btn-secondary btn-sm" (click)="getFilms()">Get Films</button>
-    </div>
+    <button type="button" class="btn btn-secondary btn-sm" (click)="getFilms()">Get Films</button>
 
     <div *ngIf="filmList.length > 0">
         <span class="d-none d-md-block">
-            <div class="row">
+            <div class="row headerRow">
                 <div class="col-md-5">Title</div>
                 <div class="col-md-3">Director</div>
                 <div class="col-md-2">Release Year</div>
             </div>
         </span>
         <div class="my-2" *ngFor="let currFilm of filmList">
-            <div class="row">
+            <div class="row contentRow">
                 <div class="col-md-5">
                     <button class="btn btn-sm" (click)="toggleDisplayDesc(currFilm)">\/</button> {{ currFilm.title }}</div>
                 <div class="col-md-3">{{ currFilm.director }}</div>
