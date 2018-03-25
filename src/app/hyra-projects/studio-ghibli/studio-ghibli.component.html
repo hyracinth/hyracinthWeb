@@ -12,18 +12,16 @@
         <div class="my-2" *ngFor="let currFilm of filmList">
             <div class="row contentRow">
                 <div class="col-md-5">
-                    <button class="btn btn-light btn-sm">
-                        <img class="icon align-top" *ngIf="!currFilm.displayDesc" src="./../../assets/open_iconic/svg/chevron-right.svg" alt="chevron-right"
-                            (click)="toggleDisplayDesc(currFilm)">
-                        <img class="icon align-top" *ngIf="currFilm.displayDesc" src="./../../assets/open_iconic/svg/chevron-bottom.svg" alt="chevron-bottom"
-                            (click)="toggleDisplayDesc(currFilm)">
+                    <button class="btn btn-light btn-sm" (click)="toggleDisplayDesc(currFilm)">
+                        <img class="icon align-top" *ngIf="!currFilm.displayDesc" src="./../../assets/open_iconic/svg/chevron-right.svg" alt="chevron-right">
+                        <img class="icon align-top" *ngIf="currFilm.displayDesc" src="./../../assets/open_iconic/svg/chevron-bottom.svg" alt="chevron-bottom">
                     </button>
                     {{ currFilm.title }}
                 </div>
                 <div class="col-md-3">{{ currFilm.director }}</div>
                 <div class="col-md-2">{{ currFilm.release_date }}</div>
                 <div class="w-100"></div>
-                <div class="col-md-10" [hidden]="!currFilm.displayDesc">{{ currFilm.description }}</div>
+                <div class="col-md-10" [hidden]="!currFilm.displayDesc"><i>{{ currFilm.description }}</i></div>
             </div>
         </div>
     </div>
