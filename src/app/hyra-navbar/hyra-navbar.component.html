@@ -7,14 +7,8 @@
 
   <div class="navbar-collapse" [ngbCollapse]="isCollapsed">
     <ul class="nav navbar-nav" *ngFor="let currMenuItem of router.config">
-      <li class="nav-item" *ngIf="currMenuItem.data != null && !currMenuItem.children">
+      <li class="nav-item" *ngIf="currMenuItem.data != null">
         <a class="nav-link" routerLink="{{ currMenuItem.path }}" routerLinkActive="active"> {{ currMenuItem.data.displayName }}</a>
-      </li>
-      <li ngbDropdown class="nav-item dropdown" *ngIf="currMenuItem.data != null && currMenuItem.children">
-        <a ngbDropdownToggle class="nav-link" routerLink="{{ currMenuItem.path }}" routerLinkActive="active">Projects</a>
-        <div ngbDropdownMenu class="dropdown-menu" *ngFor="let childMenu of currMenuItem.children">
-            <a class="dropdown-item" routerLink="{{ currMenuItem.path + '/' + childMenu.path }}" routerLinkActive="active"> {{ childMenu.data.displayName }}</a>
-        </div>
       </li>
     </ul>
   </div>

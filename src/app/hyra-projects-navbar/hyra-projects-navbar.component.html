@@ -1,0 +1,7 @@
+<div *ngFor="let currMenuItem of router.config">
+  <ul class="nav nav-tabs" *ngIf="currMenuItem.data && currMenuItem.data.displayName === 'Projects'">
+    <li class="nav-item" *ngFor="let childMenuItem of currMenuItem.children">
+        <a class="nav-link" routerLink="{{ childMenuItem.path }}" routerLinkActive="active">{{ childMenuItem.data.displayName }}</a>
+    </li>
+  </ul>
+</div>
