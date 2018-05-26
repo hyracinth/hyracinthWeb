@@ -4,3 +4,6 @@
 
 //Bootstrap content needs to be imported AFTER
 @import "~bootstrap/scss/bootstrap";
+
+// TODO Figure out how to theme Material components
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { StudioGhibliService, StudioGhibliResponse } from '../../services/studio-ghibli.service';
+import { MatTableDataSource } from '@angular/material/table';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-studio-ghibli',
@@ -8,30 +10,26 @@ import { StudioGhibliService, StudioGhibliResponse } from '../../services/studio
 })
 export class StudioGhibliComponent implements OnInit {
 
+  displayedColumns = ['title', 'director', 'releaseYear', 'description'];
   filmList: StudioGhibliResponse[] = [];
   selectedFilm: StudioGhibliResponse;
+  dataSource: any;
 
-  constructor(private _studioGhibliService: StudioGhibliService) { }
+  constructor(private _studioGhibliService: StudioGhibliService,
+    public snackBar: MatSnackBar) { }
 
   getFilms() {
     this._studioGhibliService.getMovies().subscribe(data => {
       this.filmList = data;
+      this.dataSource = new MatTableDataSource(data);
     });
-  }
-
-  selectFilm(currFilm: StudioGhibliResponse) {
-    this.selectedFilm = currFilm;
   }
 
   ngOnInit() {
   }
 
-  toggleDisplayDesc(currFilm: StudioGhibliResponse) {
-    if (!currFilm.displayDesc) {
-      currFilm.displayDesc = true;
-    } else {
-      currFilm.displayDesc = false;
-    }
+  showDesc(desc: string) {
+    this.snackBar.open(desc, 'x');
   }
 
 }

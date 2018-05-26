@@ -2,27 +2,35 @@
     <button type="button" class="btn btn-secondary btn-sm" (click)="getFilms()">Get Films</button>
 
     <div *ngIf="filmList.length > 0">
-        <span class="d-none d-md-block">
-            <div class="row headerRow">
-                <div class="col-md-5">Title</div>
-                <div class="col-md-3">Director</div>
-                <div class="col-md-2">Release Year</div>
-            </div>
-        </span>
-        <div class="my-2" *ngFor="let currFilm of filmList">
-            <div class="row contentRow">
-                <div class="col-md-5">
-                    <button class="btn btn-light btn-sm" (click)="toggleDisplayDesc(currFilm)">
-                        <img class="icon align-top" *ngIf="!currFilm.displayDesc" src="./../../assets/open_iconic/svg/chevron-right.svg" alt="chevron-right">
-                        <img class="icon align-top" *ngIf="currFilm.displayDesc" src="./../../assets/open_iconic/svg/chevron-bottom.svg" alt="chevron-bottom">
-                    </button>
-                    {{ currFilm.title }}
-                </div>
-                <div class="col-md-3">{{ currFilm.director }}</div>
-                <div class="col-md-2">{{ currFilm.release_date }}</div>
-                <div class="w-100"></div>
-                <div class="col-md-10" [hidden]="!currFilm.displayDesc"><i>{{ currFilm.description }}</i></div>
-            </div>
-        </div>
+        <mat-table #table [dataSource]="dataSource" matSort>
+            <!-- Title Column -->
+            <ng-container matColumnDef="title">
+                <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+                <mat-cell *matCellDef="let film"> {{film.title}} </mat-cell>
+            </ng-container>
+
+            <!-- Director Column -->
+            <ng-container matColumnDef="director">
+                <mat-header-cell *matHeaderCellDef> Director </mat-header-cell>
+                <mat-cell *matCellDef="let film"> {{film.director}} </mat-cell>
+            </ng-container>
+
+            <!-- Release Year Column -->
+            <ng-container matColumnDef="releaseYear">
+                <mat-header-cell *matHeaderCellDef> Release Year </mat-header-cell>
+                <mat-cell *matCellDef="let film"> {{film.release_date}} </mat-cell>
+            </ng-container>
+
+            <!-- Description Column -->
+            <ng-container matColumnDef="description">
+                <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
+                <mat-cell *matCellDef="let film">
+                    <button (click)="showDesc(film.description)">View</button>
+                </mat-cell>
+            </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
     </div>
 </div>

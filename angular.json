@@ -21,7 +21,8 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/assets/scss/main.scss"
+              "src/assets/scss/main.scss",
+              "./node_modules/@angular/"
             ],
             "scripts": []
           },
