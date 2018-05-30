@@ -1,5 +1,5 @@
 <div class="container-fluid mx-2">
-    <button type="button" class="btn btn-secondary btn-sm" (click)="getFilms()">Get Films</button>
+    <button class="my-2" mat-raised-button color="primary" (click)="getFilms()">Get Films</button>
 
     <div *ngIf="filmList.length > 0">
         <mat-table #table [dataSource]="dataSource" matSort>
@@ -25,7 +25,7 @@
             <ng-container matColumnDef="description">
                 <mat-header-cell *matHeaderCellDef> Description </mat-header-cell>
                 <mat-cell *matCellDef="let film">
-                    <button (click)="showDesc(film.description)">View</button>
+                    <button mat-button color="primary" (click)="showDesc(film.description)">View</button>
                 </mat-cell>
             </ng-container>
 

@@ -1,10 +1,13 @@
-//import variables.scss and contains all the css
+// import variables.scss and contains all the css
 @import "variables";
 @import "mixins";
 
-//Bootstrap content needs to be imported AFTER
+// Bootstrap content needs to be imported AFTER
 @import "~bootstrap/scss/bootstrap";
 
-//TODO Figure out how to theme Material components
-//@import '~@angular/material/_theming';
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+// always include only once per project
+@import '~@angular/material/_theming';
+@include mat-core();
+
+@import 'hyraMaterialTheme';
+@include angular-material-theme($hyra-mat-theme);
